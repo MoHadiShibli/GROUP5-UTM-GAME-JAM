@@ -2,6 +2,7 @@ extends MarginContainer
 
 @onready var label = $MarginContainer/Label
 @onready var timer = $LetterDisplayTimer
+@onready var next_line_indicator = $NinePatchRect/Control2/NextLineIndicator
 
 const MAX_WIDTH = 256
 var text = ""
@@ -25,8 +26,8 @@ func display_text(text_to_display: String):
 		await resized # wait for y resize
 		custom_minimum_size.y = size.y
 
-	global_position.x -= size.x / 2
-	global_position.y -= size.y + 24
+	global_position.x -= (size.x / 2)*scale.x
+	global_position.y -= (size.y + 64)*scale.y
 	
 	label.text = ""
 	_display_letter()
@@ -37,6 +38,7 @@ func _display_letter():
 	letter_index += 1
 	if letter_index >= text.length():
 		finished_displaying.emit()
+		next_line_indicator.visible = true
 		return
 	match text[letter_index]:
 		"!",".",",","?":
