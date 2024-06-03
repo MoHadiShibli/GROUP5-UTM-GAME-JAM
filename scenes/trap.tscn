@@ -52,7 +52,7 @@ size = Vector2(18, 19)
 [node name="Trap" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_oi4c3")
 autoplay = "default"
-frame_progress = 0.409019
+frame_progress = 0.291168
 script = ExtResource("3_uo1fs")
 
 [node name="Killzone" parent="." instance=ExtResource("1_co1ml")]

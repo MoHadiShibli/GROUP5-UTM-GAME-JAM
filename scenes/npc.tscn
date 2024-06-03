@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://nlku2e401jbm"]
+[gd_scene load_steps=9 format=3 uid="uid://nlku2e401jbm"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_5rqak"]
 [ext_resource type="Texture2D" uid="uid://cfj85kg4rspv" path="res://assets/sprites/Prototype_Character.png" id="1_o6sj0"]
 [ext_resource type="PackedScene" uid="uid://dqqem34jr0rkr" path="res://interaction/interaction area/interaction_area.tscn" id="3_6ua00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rn2g"]
+size = Vector2(6, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6wry"]
 atlas = ExtResource("1_o6sj0")
@@ -27,10 +30,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b6jp"]
-radius = 34.0
+radius = 36.0
 
-[node name="NPC" type="Node2D"]
+[node name="NPC" type="AnimatableBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_5rqak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_8rn2g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6pgkx")
@@ -38,6 +46,8 @@ autoplay = "default"
 frame_progress = 0.959974
 
 [node name="Interaction_area" parent="." instance=ExtResource("3_6ua00")]
+z_index = 2
+y_sort_enabled = true
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_area"]

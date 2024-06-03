@@ -1,4 +1,4 @@
-extends Node2D
+extends AnimatableBody2D
 
 @onready var interaction_area: InteractionArea = $Interaction_area
 @onready var animated_sprite = $AnimatedSprite2D
