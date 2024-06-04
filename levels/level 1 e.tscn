@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8tdg2xxns4a4"]
+[gd_scene load_steps=14 format=3 uid="uid://c6rpfbuthdjh1"]
 
 [ext_resource type="Texture2D" uid="uid://c32lhiq5ekkfp" path="res://assets/sprites/[Free-Ver.]Tiles.png" id="1_k6cwe"]
 [ext_resource type="Texture2D" uid="uid://bii7kb5ai51xu" path="res://assets/sprites/more tiles/AdventureBegins_Demo.png" id="2_uoxo0"]
@@ -676,7 +676,7 @@ scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 z_index = 3
-position = Vector2(68.6612, 399.887)
+position = Vector2(0.499173, -0.500829)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(3, 3)
 process_callback = 0
