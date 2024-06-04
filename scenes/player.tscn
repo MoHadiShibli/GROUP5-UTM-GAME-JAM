@@ -160,7 +160,6 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_6lxsb")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(2.86102e-06, 2.86102e-06)
 scale = Vector2(0.913411, 0.913411)
 energy = 0.6
