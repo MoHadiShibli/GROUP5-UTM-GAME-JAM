@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c7xwrdos0wqw"]
+[gd_scene load_steps=22 format=3 uid="uid://c7xwrdos0wqw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_83x7a"]
 [ext_resource type="Texture2D" uid="uid://ep5kclocxd2y" path="res://assets/sprites/Skeleton.png" id="2_ym7fe"]
+[ext_resource type="Texture2D" uid="uid://ttsor54m4jtd" path="res://assets/sprites/light.png" id="3_egy8e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ultms"]
 atlas = ExtResource("2_ym7fe")
@@ -142,9 +143,9 @@ animations = [{
 size = Vector2(6, 5)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-z_index = 2
 y_sort_enabled = true
 collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_83x7a")
 SPEED = 130
 
@@ -157,3 +158,10 @@ frame_progress = 0.563922
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_6lxsb")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2.86102e-06, 2.86102e-06)
+scale = Vector2(0.913411, 0.913411)
+energy = 0.6
+texture = ExtResource("3_egy8e")
+texture_scale = 0.6
