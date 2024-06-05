@@ -16,7 +16,7 @@ texture = ExtResource("2_0k863")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 2
-position = Vector2(0, -2)
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_h1cmw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
