@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
 
 @onready var killzone_collision = $Killzone/CollisionShape2D
+@onready var sfx_spikes = $sfx_spikes
 
 func _ready():
 	set_process(true)
@@ -12,4 +13,6 @@ func _process(delta):
 			killzone_collision.disabled = false
 		_:
 			killzone_collision.disabled = true
+			sfx_spikes.play()
+			
 		

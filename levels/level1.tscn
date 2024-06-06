@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://mph0v3tm6eqr"]
+[gd_scene load_steps=13 format=3 uid="uid://mph0v3tm6eqr"]
 
 [ext_resource type="PackedScene" uid="uid://c7xwrdos0wqw" path="res://scenes/player.tscn" id="1_n4bk0"]
 [ext_resource type="Texture2D" uid="uid://c32lhiq5ekkfp" path="res://assets/sprites/[Free-Ver.]Tiles.png" id="2_ptnky"]
 [ext_resource type="PackedScene" uid="uid://dilsyeom6nuyt" path="res://scenes/collectable.tscn" id="3_ngxym"]
 [ext_resource type="PackedScene" uid="uid://cyfk1rn1jvi2g" path="res://scenes/trap.tscn" id="4_ppdr2"]
 [ext_resource type="PackedScene" uid="uid://nlku2e401jbm" path="res://scenes/npc.tscn" id="5_r5rkn"]
-[ext_resource type="PackedScene" uid="uid://bgh7bkkfhh06w" path="res://scenes/chest.tscn" id="6_fqnip"]
-[ext_resource type="PackedScene" uid="uid://dj5fgmpm216fh" path="res://scenes/box.tscn" id="7_246hc"]
+[ext_resource type="PackedScene" uid="uid://wmi78vgey3wi" path="res://scenes/chest.tscn" id="6_fqnip"]
+[ext_resource type="PackedScene" path="res://scenes/box.tscn" id="7_246hc"]
+[ext_resource type="Script" path="res://levels/BGMusic.gd" id="8_g8xv6"]
+[ext_resource type="AudioStream" uid="uid://caqyjo2nachna" path="res://sound/music/30sec-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="9_4ny7d"]
+[ext_resource type="AudioStream" uid="uid://cnrt2c1esu3sf" path="res://sound/music/Beautiful Obsession _ Winter Bits [Copyright Free Music] ~ lofi chiptune 8-bit #lofi #8bit #chillhop.mp3" id="10_ppgku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngya7"]
 texture = ExtResource("2_ptnky")
@@ -553,6 +556,7 @@ layer_1/tile_data = PackedInt32Array(196614, 327680, 6, 196613, 327680, 6, 19661
 [node name="Player" parent="." instance=ExtResource("1_n4bk0")]
 z_index = 2
 y_sort_enabled = false
+position = Vector2(5, -5)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -565,20 +569,21 @@ rotation_smoothing_enabled = true
 
 [node name="Trap" parent="." instance=ExtResource("4_ppdr2")]
 z_index = 1
-position = Vector2(46, -82)
+position = Vector2(47, -105)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0807834, 0.0807833, 0.0807833, 1)
 
 [node name="Collectable" parent="." instance=ExtResource("3_ngxym")]
 z_index = 2
-position = Vector2(70, -10)
+position = Vector2(71, -10)
 scale = Vector2(1.5, 1.5)
 
 [node name="NPC" parent="." instance=ExtResource("5_r5rkn")]
 z_index = 2
 y_sort_enabled = false
-position = Vector2(-118, -52)
+position = Vector2(-102, -52)
 scale = Vector2(2, 2)
 
 [node name="Box" parent="." instance=ExtResource("7_246hc")]
@@ -588,3 +593,16 @@ position = Vector2(22, 35)
 [node name="Chest" parent="." instance=ExtResource("6_fqnip")]
 z_index = 2
 position = Vector2(141, -91)
+
+[node name="BGMusic" type="Node" parent="."]
+script = ExtResource("8_g8xv6")
+
+[node name="8bitNostalgia_by_DavidRenda" type="AudioStreamPlayer" parent="BGMusic"]
+stream = ExtResource("9_4ny7d")
+volume_db = -8.0
+bus = &"music"
+
+[node name="BeautifulObsession_WinterBits" type="AudioStreamPlayer" parent="BGMusic"]
+stream = ExtResource("10_ppgku")
+volume_db = 10.0
+bus = &"music"

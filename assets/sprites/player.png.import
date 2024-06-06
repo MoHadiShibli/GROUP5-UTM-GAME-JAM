@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmuss1dbb3qwb"
-path="res://.godot/imported/silver-key.png-77757dc8a9752bcb2a7137f5272f45cd.ctex"
+uid="uid://bb78sfxfm6pxw"
+path="res://.godot/imported/player.png-e1eaffe0873063c60a0d0b322e4d87d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/silver-key.png"
-dest_files=["res://.godot/imported/silver-key.png-77757dc8a9752bcb2a7137f5272f45cd.ctex"]
+source_file="res://assets/sprites/player.png"
+dest_files=["res://.godot/imported/player.png-e1eaffe0873063c60a0d0b322e4d87d9.ctex"]
 
 [params]
 

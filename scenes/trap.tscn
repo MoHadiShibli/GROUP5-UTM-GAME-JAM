@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyfk1rn1jvi2g"]
+[gd_scene load_steps=11 format=3 uid="uid://cyfk1rn1jvi2g"]
 
 [ext_resource type="PackedScene" uid="uid://dlnln1t4meyjy" path="res://scenes/killzone.tscn" id="1_co1ml"]
 [ext_resource type="Texture2D" uid="uid://c2vgepmfidgpn" path="res://assets/sprites/Trap-Spikes-Floor.png" id="2_7bf4o"]
 [ext_resource type="Script" path="res://scripts/trap.gd" id="3_uo1fs"]
+[ext_resource type="AudioStream" uid="uid://b3py1osev5ydu" path="res://sound/sfx/bear-trap-103800.mp3" id="4_y8235"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmhml"]
 atlas = ExtResource("2_7bf4o")
@@ -60,3 +61,10 @@ script = ExtResource("3_uo1fs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_wssmv")
+
+[node name="sfx_spikes" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_y8235")
+volume_db = -10.0
+autoplay = true
+attenuation = 35.5062
+bus = &"sfx"

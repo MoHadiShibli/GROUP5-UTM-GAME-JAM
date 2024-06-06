@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://nlku2e401jbm"]
+[gd_scene load_steps=10 format=3 uid="uid://nlku2e401jbm"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_5rqak"]
 [ext_resource type="Texture2D" uid="uid://cfj85kg4rspv" path="res://assets/sprites/Prototype_Character.png" id="1_o6sj0"]
 [ext_resource type="PackedScene" uid="uid://dqqem34jr0rkr" path="res://interaction/interaction area/interaction_area.tscn" id="3_6ua00"]
+[ext_resource type="AudioStream" uid="uid://b47a657271bp2" path="res://sound/sfx/speech.wav" id="4_rnh8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rn2g"]
 size = Vector2(6, 6)
@@ -52,3 +53,8 @@ action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_area"]
 shape = SubResource("CircleShape2D_2b6jp")
+
+[node name="speech_sound" type="AudioStreamPlayer2D" parent="Interaction_area"]
+stream = ExtResource("4_rnh8w")
+volume_db = 15.0
+bus = &"sfx"

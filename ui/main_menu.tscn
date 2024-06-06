@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqqxm3s747glg"]
+[gd_scene load_steps=3 format=3 uid="uid://biosnvtv0oor2"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_mes36"]
 [ext_resource type="FontFile" uid="uid://c865kgrmt1tsb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_rem31"]

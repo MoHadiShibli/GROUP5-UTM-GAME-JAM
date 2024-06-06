@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnrt2c1esu3sf"
+path="res://.godot/imported/Beautiful Obsession _ Winter Bits [Copyright Free Music] ~ lofi chiptune 8-bit #lofi #8bit #chillhop.mp3-ab9c7e8f3d78a20feb335e4be00f766a.mp3str"
+
+[deps]
+
+source_file="res://sound/music/Beautiful Obsession _ Winter Bits [Copyright Free Music] ~ lofi chiptune 8-bit #lofi #8bit #chillhop.mp3"
+dest_files=["res://.godot/imported/Beautiful Obsession _ Winter Bits [Copyright Free Music] ~ lofi chiptune 8-bit #lofi #8bit #chillhop.mp3-ab9c7e8f3d78a20feb335e4be00f766a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

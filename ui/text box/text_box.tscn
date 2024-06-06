@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgbigves4a7ae"]
+[gd_scene load_steps=12 format=3 uid="uid://dgbigves4a7ae"]
 
 [ext_resource type="Script" path="res://ui/text box/text_box.gd" id="1_5mche"]
 [ext_resource type="Texture2D" uid="uid://dqhlkduc3w17e" path="res://assets/sprites/speach_bubble.png" id="2_jaenm"]
 [ext_resource type="Texture2D" uid="uid://bhqrf5ehh4u1n" path="res://assets/sprites/tail.png" id="3_fsng4"]
 [ext_resource type="FontFile" uid="uid://c865kgrmt1tsb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_l3vuy"]
 [ext_resource type="Texture2D" uid="uid://bn80tlkwb5ydl" path="res://assets/sprites/next_line.png" id="4_ogi5l"]
+[ext_resource type="AudioStream" uid="uid://b47a657271bp2" path="res://sound/sfx/speech.wav" id="6_485i1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6uakt"]
 atlas = ExtResource("4_ogi5l")
@@ -108,5 +109,8 @@ vertical_alignment = 1
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="audio_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_485i1")
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
