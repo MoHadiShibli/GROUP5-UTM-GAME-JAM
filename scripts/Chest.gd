@@ -7,7 +7,7 @@ extends StaticBody2D
 @onready var interaction_collision = $InteractionArea/CollisionShape2D
 @onready var animation = $AnimationPlayer
 @onready var text_panel = %TextPanel
-
+const PLAYER = preload("res://scenes/player.tscn")
 
 func _ready():
 	interaction_area.interact = Callable(self, "open_chest")
@@ -18,5 +18,6 @@ func open_chest():
 		interaction_collision.disabled = true
 		text_panel.queue_text("You found an artifact!")
 		GameManager.artifacts.append(artifact)
+		GameManager.apply_effects()
 	else:
 		animation.play("no_access")

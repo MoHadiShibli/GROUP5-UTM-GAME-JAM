@@ -1,8 +1,24 @@
-[gd_scene load_steps=22 format=3 uid="uid://c7xwrdos0wqw"]
+[gd_scene load_steps=26 format=3 uid="uid://c7xwrdos0wqw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_83x7a"]
 [ext_resource type="Texture2D" uid="uid://8c4vde1k71la" path="res://assets/sprites/player3-sheet.png" id="2_m74ke"]
 [ext_resource type="Texture2D" uid="uid://ttsor54m4jtd" path="res://assets/sprites/light.png" id="3_egy8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wydjm"]
+atlas = ExtResource("2_m74ke")
+region = Rect2(0, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbobv"]
+atlas = ExtResource("2_m74ke")
+region = Rect2(48, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8wwj"]
+atlas = ExtResource("2_m74ke")
+region = Rect2(96, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2imo"]
+atlas = ExtResource("2_m74ke")
+region = Rect2(144, 192, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrwc0"]
 atlas = ExtResource("2_m74ke")
@@ -70,6 +86,23 @@ region = Rect2(144, 0, 48, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_srr75"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wydjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbobv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8wwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2imo")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hrwc0")
@@ -150,9 +183,9 @@ SPEED = 130
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_srr75")
-animation = &"walking"
+animation = &"walking_up"
 autoplay = "idle"
-frame_progress = 0.704915
+frame_progress = 0.810812
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)

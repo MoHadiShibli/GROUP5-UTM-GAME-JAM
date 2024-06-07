@@ -595,5 +595,3 @@ key_ID = 1
 [node name="Skeleton" parent="." instance=ExtResource("8_7msee")]
 position = Vector2(-538, -242)
 patrol_points = Array[Vector2]([Vector2(-541, -398), Vector2(-538, -242)])
-patrol_speed = 30.0
-chase_speed = 100.0

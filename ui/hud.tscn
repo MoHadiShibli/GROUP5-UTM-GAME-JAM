@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bofnhmn78j4v5"]
+
+[ext_resource type="Texture2D" uid="uid://cs8o58dltylb0" path="res://assets/sprites/hearts.png" id="1_ioqvb"]
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_skw6b"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_skw6b")
+
+[node name="HeartsFull" type="TextureRect" parent="."]
+offset_right = 66.0
+offset_bottom = 60.0
+texture = ExtResource("1_ioqvb")
+stretch_mode = 1

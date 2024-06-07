@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqqxm3s747glg"]
+[gd_scene load_steps=7 format=3 uid="uid://b7l6ybu1o0fgh"]
 
-[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_mes36"]
-[ext_resource type="FontFile" uid="uid://c865kgrmt1tsb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_rem31"]
-[ext_resource type="FontFile" uid="uid://bq3e6s4evhbn1" path="res://assets/fonts/8bitlim.ttf" id="3_dn05c"]
+[ext_resource type="Script" path="res://ui/DeathScreen.gd" id="1_voe4v"]
+[ext_resource type="FontFile" uid="uid://bq3e6s4evhbn1" path="res://assets/fonts/8bitlim.ttf" id="2_2whi4"]
+[ext_resource type="FontFile" uid="uid://c865kgrmt1tsb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_h03s2"]
 
 [sub_resource type="Animation" id="Animation_hsjni"]
 resource_name = "fade"
@@ -69,7 +69,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.5, 5),
 "transitions": PackedFloat32Array(0.6, 1.75, 0.4),
 "update": 0,
-"values": [Vector2(400, 145), Vector2(350, 136), Vector2(400, 145)]
+"values": [Vector2(321, 145), Vector2(280, 136), Vector2(330, 145)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xe5p"]
@@ -78,23 +78,21 @@ _data = {
 "pulse": SubResource("Animation_6xvjc")
 }
 
-[node name="MainMenu" type="Control"]
+[node name="DeathScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-script = ExtResource("1_mes36")
+script = ExtResource("1_voe4v")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
 offset_left = -124.0
 offset_top = -137.0
 offset_right = 1410.0
 offset_bottom = 802.0
-color = Color(0.064686, 0.064686, 0.064686, 1)
+color = Color(0.103744, 0.103744, 0.103744, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect")
@@ -123,30 +121,27 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_rem31")
+theme_override_fonts/font = ExtResource("2_h03s2")
 theme_override_font_sizes/font_size = 71
-text = "PLAY"
+text = "REPLAY"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -278.058
-offset_top = 138.15
-offset_right = 309.942
-offset_bottom = 351.15
+offset_left = -319.0
+offset_top = 145.0
+offset_right = 415.0
+offset_bottom = 358.001
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 30
-theme_override_constants/shadow_offset_y = 33
-theme_override_fonts/font = ExtResource("3_dn05c")
-theme_override_font_sizes/font_size = 192
-text = "FALLEN"
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+theme_override_constants/shadow_offset_y = 40
+theme_override_fonts/font = ExtResource("2_2whi4")
+theme_override_font_sizes/font_size = 166
+text = "YOU DIED"

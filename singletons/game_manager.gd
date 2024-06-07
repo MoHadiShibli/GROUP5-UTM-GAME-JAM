@@ -5,22 +5,17 @@ extends Node
 var keys = []
 var hearts = 3
 var artifacts = []
-var mem_crystals = []
-
-func _ready():
-	pass 
+var player_speed: int
+var player_vision: float
 
 func change_hearts():
 	pass
 
-func apply_effect(artifact):
-	if artifact == "Heart":
-		hearts += 1
-	elif artifact == "Speed":
-		player.SPEED = 200
-	elif artifact == "Vision":
-		$Player/Light.texture_scale = 0.8
-
-
-
-
+func apply_effects():
+	if "Heart" in artifacts:
+		hearts = 4
+		print("+1")
+	elif "SPEED" in artifacts:
+		player_speed = 200
+	elif "Vision" in artifacts:
+		player_vision = 0.8
