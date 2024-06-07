@@ -1,8 +1,23 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqqxm3s747glg"]
 
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_mes36"]
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_mes36"]
 [ext_resource type="FontFile" uid="uid://c865kgrmt1tsb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_rem31"]
 [ext_resource type="FontFile" uid="uid://bq3e6s4evhbn1" path="res://assets/fonts/8bitlim.ttf" id="3_dn05c"]
+
+[sub_resource type="Animation" id="Animation_hsjni"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_6xvjc"]
 resource_name = "pulse"
@@ -55,21 +70,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(0.6, 1.75, 0.4),
 "update": 0,
 "values": [Vector2(409, 145), Vector2(355, 136), Vector2(409, 145)]
-}
-
-[sub_resource type="Animation" id="Animation_hsjni"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7xe5p"]

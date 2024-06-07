@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://diia4arm5m5wd"]
+
+[ext_resource type="Script" path="res://scripts/MemoryCrystal.gd" id="1_sathm"]
+[ext_resource type="Texture2D" uid="uid://h3l6ar0usiqg" path="res://assets/sprites/Crystal3-sheet.png" id="2_n7pqc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es66o"]
+atlas = ExtResource("2_n7pqc")
+region = Rect2(0, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7lrl"]
+atlas = ExtResource("2_n7pqc")
+region = Rect2(17, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f8ja"]
+atlas = ExtResource("2_n7pqc")
+region = Rect2(34, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilewn"]
+atlas = ExtResource("2_n7pqc")
+region = Rect2(51, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0po4"]
+atlas = ExtResource("2_n7pqc")
+region = Rect2(68, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0hk5"]
+atlas = ExtResource("2_n7pqc")
+region = Rect2(51, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nerh1"]
+atlas = ExtResource("2_n7pqc")
+region = Rect2(85, 0, 17, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6jlj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es66o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7lrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f8ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilewn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0po4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0hk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nerh1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nyg5"]
+
+[node name="MemoryCrystal" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_sathm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_u6jlj")
+frame_progress = 0.343962
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6nyg5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

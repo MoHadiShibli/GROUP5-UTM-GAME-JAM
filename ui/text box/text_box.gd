@@ -1,8 +1,11 @@
 extends MarginContainer
 
 @onready var label = $MarginContainer/Label
+
 @onready var timer = $LetterDisplayTimer
+
 @onready var next_line_indicator = $NinePatchRect/Control2/NextLineIndicator
+
 
 const MAX_WIDTH = 256
 var text = ""

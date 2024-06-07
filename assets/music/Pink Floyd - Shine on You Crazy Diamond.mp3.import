@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl2e45e0xbsh8"
+path="res://.godot/imported/Pink Floyd - Shine on You Crazy Diamond.mp3-439cf61ef2c66b0d6ce260c6fb757879.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Pink Floyd - Shine on You Crazy Diamond.mp3"
+dest_files=["res://.godot/imported/Pink Floyd - Shine on You Crazy Diamond.mp3-439cf61ef2c66b0d6ce260c6fb757879.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://ncxyrl4s1jdt"]
+
+[ext_resource type="Script" path="res://ui/TextPanel.gd" id="1_4ie3t"]
+[ext_resource type="FontFile" uid="uid://c865kgrmt1tsb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_g0252"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxp2l"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.881937, 0.881937, 0.881936, 1)
+
+[sub_resource type="Animation" id="Animation_o51wi"]
+resource_name = "test show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextPanelContainer/MarginContainer/HBoxContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi7tu"]
+_data = {
+"letters_animation": SubResource("Animation_o51wi")
+}
+
+[node name="TextPanel" type="CanvasLayer"]
+script = ExtResource("1_4ie3t")
+text = "WELL WELL WELL, LOOK WHO'S HERE.... A STRANGER!!!!!!!"
+
+[node name="TextPanelContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -222.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="TextPanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gxp2l")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="Panel" type="Panel" parent="TextPanelContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextPanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="TextPanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_g0252")
+theme_override_font_sizes/font_size = 31
+text = "*"
+
+[node name="Label" type="Label" parent="TextPanelContainer/MarginContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("2_g0252")
+theme_override_font_sizes/font_size = 31
+autowrap_mode = 3
+
+[node name="End" type="Label" parent="TextPanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_g0252")
+theme_override_font_sizes/font_size = 31
+text = ">"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qi7tu")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

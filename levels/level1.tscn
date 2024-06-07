@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://mph0v3tm6eqr"]
+[gd_scene load_steps=10 format=3 uid="uid://mph0v3tm6eqr"]
 
 [ext_resource type="PackedScene" uid="uid://c7xwrdos0wqw" path="res://scenes/player.tscn" id="1_n4bk0"]
 [ext_resource type="Texture2D" uid="uid://c32lhiq5ekkfp" path="res://assets/sprites/[Free-Ver.]Tiles.png" id="2_ptnky"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://choad78pc7rib" path="res://scenes/door.tscn" id="4_xgphs"]
 [ext_resource type="PackedScene" uid="uid://bgh7bkkfhh06w" path="res://scenes/chest.tscn" id="5_5y3ip"]
 [ext_resource type="PackedScene" uid="uid://dfm43q1cpr5ec" path="res://scenes/chest_key.tscn" id="6_grmqo"]
-[ext_resource type="PackedScene" uid="uid://nlku2e401jbm" path="res://scenes/npc.tscn" id="7_053td"]
-[ext_resource type="PackedScene" uid="uid://dkvuvfpvanwp1" path="res://scenes/enemy.tscn" id="8_14taf"]
+[ext_resource type="PackedScene" uid="uid://dnhualju3putt" path="res://scenes/skeleton.tscn" id="8_7msee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngya7"]
 texture = ExtResource("2_ptnky")
@@ -544,6 +543,7 @@ sources/0 = SubResource("TileSetAtlasSource_ngya7")
 y_sort_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0807834, 0.0807833, 0.0807833, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -563,7 +563,6 @@ layer_1/tile_data = PackedInt32Array(196614, 327680, 6, 196613, 327680, 6, 19661
 [node name="Player" parent="." instance=ExtResource("1_n4bk0")]
 z_index = 2
 y_sort_enabled = false
-scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 z_index = 3
@@ -593,11 +592,8 @@ z_index = 2
 position = Vector2(-171, 14)
 key_ID = 1
 
-[node name="NPC" parent="." instance=ExtResource("7_053td")]
-z_index = 2
-position = Vector2(-170, -120)
-scale = Vector2(1.81, 1.81)
-
-[node name="enemy" parent="." instance=ExtResource("8_14taf")]
-z_index = 2
-position = Vector2(139, -91)
+[node name="Skeleton" parent="." instance=ExtResource("8_7msee")]
+position = Vector2(-538, -242)
+patrol_points = Array[Vector2]([Vector2(-541, -398), Vector2(-538, -242)])
+patrol_speed = 30.0
+chase_speed = 100.0

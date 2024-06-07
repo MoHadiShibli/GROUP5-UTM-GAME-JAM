@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b20bgpcciphhd"]
+
+[ext_resource type="AudioStream" uid="uid://bn25k2ynwuxde" path="res://assets/music/fallen.mp3" id="1_nqw3o"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_nqw3o")
+volume_db = -0.305
+autoplay = true
+bus = &"Music"
