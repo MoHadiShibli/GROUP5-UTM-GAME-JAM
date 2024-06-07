@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mph0v3tm6eqr"]
+[gd_scene load_steps=14 format=3 uid="uid://mph0v3tm6eqr"]
 
 [ext_resource type="PackedScene" uid="uid://c7xwrdos0wqw" path="res://scenes/player.tscn" id="1_n4bk0"]
 [ext_resource type="Texture2D" uid="uid://c32lhiq5ekkfp" path="res://assets/sprites/[Free-Ver.]Tiles.png" id="2_ptnky"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://levels/BGMusic.gd" id="8_g8xv6"]
 [ext_resource type="AudioStream" uid="uid://caqyjo2nachna" path="res://sound/music/30sec-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="9_4ny7d"]
 [ext_resource type="AudioStream" uid="uid://cnrt2c1esu3sf" path="res://sound/music/Beautiful Obsession _ Winter Bits [Copyright Free Music] ~ lofi chiptune 8-bit #lofi #8bit #chillhop.mp3" id="10_ppgku"]
+[ext_resource type="AudioStream" uid="uid://bpvav46umqndg" path="res://sound/music/music-box-greensleves-33931.mp3" id="11_apj6a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngya7"]
 texture = ExtResource("2_ptnky")
@@ -605,4 +606,8 @@ bus = &"music"
 [node name="BeautifulObsession_WinterBits" type="AudioStreamPlayer" parent="BGMusic"]
 stream = ExtResource("10_ppgku")
 volume_db = 10.0
+bus = &"music"
+
+[node name="Greensleves" type="AudioStreamPlayer" parent="BGMusic"]
+stream = ExtResource("11_apj6a")
 bus = &"music"
