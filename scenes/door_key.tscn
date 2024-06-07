@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8e785rpm3v51"]
+
+[ext_resource type="Script" path="res://scripts/door_key.gd" id="1_g4t8j"]
+[ext_resource type="Texture2D" uid="uid://gnlro07r1qh5" path="res://assets/sprites/silver-key.png" id="1_m32fa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7ly1"]
+size = Vector2(27, 14)
+
+[node name="DoorKey" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_g4t8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m32fa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_d7ly1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

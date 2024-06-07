@@ -3,7 +3,7 @@ extends AnimatableBody2D
 @onready var interaction_area: InteractionArea = $Interaction_area
 @onready var animated_sprite = $AnimatedSprite2D
 
-const lines: Array[String] = [
+@export var lines: Array[String] = [
 	"Wassup!",
 	"How are you doing there buddy!",
 	"Are you lost by any chance?",

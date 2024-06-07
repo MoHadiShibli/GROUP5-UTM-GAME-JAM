@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfm43q1cpr5ec"]
+
+[ext_resource type="Texture2D" uid="uid://bylueq38bcgoq" path="res://assets/sprites/golden-key.png" id="1_qifrb"]
+[ext_resource type="Script" path="res://scripts/chest_key.gd" id="1_vjdl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cujyh"]
+size = Vector2(27, 14)
+
+[node name="ChestKey" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_vjdl4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qifrb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_cujyh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

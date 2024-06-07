@@ -145,15 +145,13 @@ size = Vector2(6, 5)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
-collision_mask = 7
 script = ExtResource("1_83x7a")
 SPEED = 130
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rxtu8")
-animation = &"walking_up"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.563922
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4.5)

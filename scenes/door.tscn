@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://choad78pc7rib"]
+
+[ext_resource type="Texture2D" uid="uid://bg6mthv8nof5" path="res://assets/sprites/door.png" id="1_5142k"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_pq17h"]
+[ext_resource type="PackedScene" uid="uid://dqqem34jr0rkr" path="res://interaction/interaction area/interaction_area.tscn" id="2_26il2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuxko"]
+atlas = ExtResource("1_5142k")
+region = Rect2(0, 276, 64, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j6wy"]
+atlas = ExtResource("1_5142k")
+region = Rect2(0, 343, 64, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cog56"]
+atlas = ExtResource("1_5142k")
+region = Rect2(0, 410, 64, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npuka"]
+atlas = ExtResource("1_5142k")
+region = Rect2(0, 477, 64, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhfmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuxko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j6wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cog56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npuka")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42ttk"]
+size = Vector2(32, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77s04"]
+radius = 38.0
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_pq17h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rhfmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 15)
+shape = SubResource("RectangleShape2D_42ttk")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_26il2")]
+position = Vector2(16, -9)
+action_name = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_77s04")
