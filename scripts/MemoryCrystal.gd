@@ -6,5 +6,6 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		text_panel.queue_text(memory)
+		for i in memory:
+			text_panel.queue_text(i)
 		queue_free()

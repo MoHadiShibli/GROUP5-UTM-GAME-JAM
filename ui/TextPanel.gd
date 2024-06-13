@@ -57,8 +57,8 @@ func display_text():
 	label.text = next_text
 	change_state(State.READING)
 	show_textpanel()
-	var animation_speed = len(next_text)*0.05
-	if animation_speed < 1.0:
+	var animation_speed = len(next_text)*0.01
+	if animation_speed < 2.0:
 		animation_player.speed_scale = 2
 		animation_player.play("letters_animation")
 	else:

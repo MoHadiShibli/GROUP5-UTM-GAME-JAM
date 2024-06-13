@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mph0v3tm6eqr"]
+[gd_scene load_steps=11 format=3 uid="uid://mph0v3tm6eqr"]
 
 [ext_resource type="PackedScene" uid="uid://c7xwrdos0wqw" path="res://scenes/player.tscn" id="1_n4bk0"]
 [ext_resource type="Texture2D" uid="uid://c32lhiq5ekkfp" path="res://assets/sprites/[Free-Ver.]Tiles.png" id="2_ptnky"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://choad78pc7rib" path="res://scenes/door.tscn" id="4_xgphs"]
 [ext_resource type="PackedScene" uid="uid://bgh7bkkfhh06w" path="res://scenes/chest.tscn" id="5_5y3ip"]
 [ext_resource type="PackedScene" uid="uid://dfm43q1cpr5ec" path="res://scenes/chest_key.tscn" id="6_grmqo"]
+[ext_resource type="PackedScene" uid="uid://diia4arm5m5wd" path="res://scenes/memory_crystal.tscn" id="8_6umid"]
 [ext_resource type="PackedScene" uid="uid://dnhualju3putt" path="res://scenes/skeleton.tscn" id="8_7msee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngya7"]
@@ -595,3 +596,8 @@ key_ID = 1
 [node name="Skeleton" parent="." instance=ExtResource("8_7msee")]
 position = Vector2(-538, -242)
 patrol_points = Array[Vector2]([Vector2(-541, -398), Vector2(-538, -242)])
+
+[node name="MemoryCrystal" parent="." instance=ExtResource("8_6umid")]
+z_index = 2
+position = Vector2(-114, 66)
+memory = Array[String](["HELLO THERE"])
